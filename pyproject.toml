@@ -1,0 +1,43 @@
+[project]
+name = "nonebot-plugin-params"
+version = "0.1.0"
+description = "提供协议适配时常用的注入函数"
+authors = [
+    {name = "iyume", email = "iyumelive@gmail.com"},
+]
+license-expression = "MIT"
+dependencies = ["nonebot2>=2.0.0b1"]
+requires-python = ">=3.7.3"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/iyume/nonebot-plugin-params"
+repository = "https://github.com/iyume/nonebot-plugin-params"
+
+[project.optional-dependencies]
+[tool]
+[tool.pdm]
+editable-backend = "editables"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "black>=22.0.0"
+]
+all = [
+    "nonebot-adapter-onebot>=2.0.0b1",
+    # nonebot-adapter-ding still alpha,
+    "nonebot-adapter-feishu>=2.0.0b1",
+    # "nonebot-adapter-telegram @ git+https://github.com/nonebot/adapter-telegram.git",
+    "nonebot-adapter-qqguild @ git+https://github.com/nonebot/adapter-qqguild.git",
+    # nonebot-adapter-kaiheila
+]
+
+[tool.black]
+line-length = 92
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
