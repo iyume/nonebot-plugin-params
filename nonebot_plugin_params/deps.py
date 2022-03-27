@@ -1,7 +1,7 @@
 from functools import lru_cache
 from io import BytesIO
 from pathlib import Path
-from typing import TYPE_CHECKING, Callable, Optional, Type, Union, cast
+from typing import TYPE_CHECKING, Awaitable, Callable, Optional, Type, Union, cast
 
 from nonebot.adapters import Bot, Event, MessageSegment
 from nonebot.params import Depends
@@ -140,7 +140,9 @@ class _get_image_segment:
         raise NotSupportException
 
 
-def ImageSegmentMethod() -> Callable[[Union[str, bytes, BytesIO, Path]], MessageSegment]:
+def ImageSegmentMethod() -> Callable[
+    [Union[str, bytes, BytesIO, Path]], Awaitable[MessageSegment]
+]:
     """获取 Image Segment 的构造方法。
 
     适配: OneBot, QQGuild
