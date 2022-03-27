@@ -2,4 +2,8 @@ from .deps import AdapterName as AdapterName
 from .deps import EventName as EventName
 from .deps import ImageSegmentMethod as ImageSegmentMethod
 from .deps import MessageSegmentClass as MessageSegmentClass
+from .permission import FEISHU as FEISHU
+from .permission import ONEBOT as ONEBOT
 from .permission import PRIVATEMESSAGE as PRIVATEMESSAGE
+from .permission import QQGUILD as QQGUILD
+from .permission import TELEGRAM as TELEGRAM
