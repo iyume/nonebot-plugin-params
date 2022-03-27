@@ -31,4 +31,4 @@ async def _is_private_message(
     return False
 
 
-is_private_message = Rule(_is_private_message)
+is_private_message: Rule = Rule(_is_private_message)
