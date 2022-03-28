@@ -80,6 +80,10 @@ def MessageSegmentClass() -> Type[MessageSegment]:
 
 
 class _get_image_segment:
+    bot: Bot
+    adapter_name: str
+    _MS: Type[MessageSegment]
+
     auto_convertion: bool = True
     """如果能够转换，则自动转换图片类型。如 Path 转 str， BytesIO 转 bytes。"""
 
@@ -95,12 +99,12 @@ class _get_image_segment:
 
     async def __call__(self, file: Union[str, bytes, BytesIO, Path]) -> MessageSegment:
         if self.adapter_name == ONEBOT:
-            self._MS = cast("OneBot_MessageSegment", self._MS)
+            self._MS = cast("Type[OneBot_MessageSegment]", self._MS)
             return self._MS.image(file)
 
         elif self.adapter_name == FEISHU:
             # experimental code
-            self._MS = cast("Feishu_MessageSegment", self._MS)
+            self._MS = cast("Type[Feishu_MessageSegment]", self._MS)
             if isinstance(file, (str, Path)):
                 with open(file, "rb") as f:
                     file = f.read()
@@ -124,7 +128,7 @@ class _get_image_segment:
             return File.photo(file)
 
         elif self.adapter_name == QQGUILD:
-            self._MS = cast("QQGuild_MessageSegment", self._MS)
+            self._MS = cast("Type[QQGuild_MessageSegment]", self._MS)
 
             if isinstance(file, str):
                 return self._MS.image(file)
