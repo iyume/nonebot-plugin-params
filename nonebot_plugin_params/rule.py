@@ -1,4 +1,4 @@
-from typing import Tuple, Union
+from typing import Tuple
 
 from nonebot.rule import Rule
 from typing_extensions import Literal
@@ -17,7 +17,7 @@ class _check_adapter_name:
         return adapter_name in self.names
 
 
-def allow_adapters(allows: Tuple[Literal[FEISHU, ONEBOT, QQGUILD, TELEGRAM], ...]) -> Rule:
+def allow_adapters(*allows: Literal[FEISHU, ONEBOT, QQGUILD, TELEGRAM]) -> Rule:
     return Rule(_check_adapter_name(allows))
 
 
