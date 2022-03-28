@@ -33,7 +33,7 @@ from nonebot_plugin_params import ONEBOT
 
 ## 插件示例 Example
 
-先来看一个简单的示例程序，这是 [示例插件项目地址](https://github.com/iyume/nonebot-plugin-wordle)，这里只提取了一部分用作示例。
+先来看一个简单的示例程序，这是 [示例插件项目地址](https://github.com/iyume/nonebot-plugin-wordle-daily)，这里只提取了一部分用作示例。
 
 ```python
 from typing import TYPE_CHECKING, Type, cast
