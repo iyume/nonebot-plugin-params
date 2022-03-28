@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-params"
-version = "0.1.0"
+version = "0.1.1"
 description = "提供协议适配时常用的注入函数"
 authors = [
     {name = "iyume", email = "iyumelive@gmail.com"},
